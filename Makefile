@@ -5,6 +5,7 @@
 init:
 	@docker compose up -d postgres redis
 	@docker compose run --rm aerich aerich init -t app.config.TORTOISE_ORM
+	@docker compose run --rm aerich aerich init-db
 	@docker compose up -d fastapi celery celery_beat
 
 restart:

@@ -59,6 +59,8 @@ services:
     env_file:
       - .env
     container_name: aerich
+    volumes:
+      - ./:/app
     command: >
       sh -c "
       aerich upgrade
